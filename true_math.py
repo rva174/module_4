@@ -1,11 +1,15 @@
 def true_divide(first, second):
-    import math
-    math.inf
+    from math import inf
 
     if second > 0:
         return first / second
     if second == 0:
-        return math.inf
+        return inf
+
+ #   if second == 0:
+  #      return inf
+
+
 
 result1 = true_divide(69, 3)
 result2 = true_divide(3, 0)
