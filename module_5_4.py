@@ -12,10 +12,13 @@ class House:
 
 gk1 = House("ЖК Горский", 10)
 print(House.houses_history)
+
 gk2 = House("ЖК Домик в деревне", 20)
 print(House.houses_history)
+
 gk3 = House("ЖК Матрёшки", 20)
 print(House.houses_history)
+
 del gk2
 del gk3
 print(House.houses_history)
