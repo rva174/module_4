@@ -1,4 +1,5 @@
-#Съедобное, несъудобное
+# 6.1 Зачем нужно наследование
+#Съедобное, несъeдобное
 class Animal:
     alive = True        # живой,
     fed = False         # накормленный
@@ -13,23 +14,24 @@ class Animal:
         else:
             print(f"{self.name} не стал есть {self.food.name}")
             self.alive = False
+
 class Plant:
     edible = False       # съедобность
     def __init__(self, name):
-        self.name = name
+       self.name = name
+
 class Mammal(Animal):
-    def __init(self, foood):
-        self.food = food
+    pass
 
 class Predator(Animal):
-    def __init(self, food):
-        self.food = food
+    pass
 
 class Flower(Plant):
     pass
 
 class Fruit(Plant):
     edible = True
+
 
 a1 = Predator('Волк с Уолл-Стрит')
 a2 = Mammal('Хатика')
@@ -45,4 +47,3 @@ a1.eat(p1)
 a2.eat(p2)
 print(a1.alive)
 print(a2.fed)
-
