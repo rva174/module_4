@@ -5,7 +5,7 @@ class Figure:
     sides_count = 0
     filled = False
     def __init__(self, color, *sides):
-        self.__color = [*color]
+        self.__color = [color]
         self.__sides = [*sides]
 
     def get_color(self):
@@ -79,12 +79,9 @@ class Cube(Figure):
 
 
     def get_volume(self):
+        super().__init__(self)
+        return self.sides ** 3
 
-        volume = sides ** 3
-        return get_volume
-
-        print(self.get_volume())
- #       super().__init__(color, *side)
 
 circle1 = Circle((200, 200, 100), 10)
 cube1 = Cube((222, 35, 130), 6)
@@ -102,6 +99,6 @@ print(circle1.get_sides())
 
 # # Проверка периметра (круга), это и есть длина:
 print(len(circle1))                     # 15
-# #
+
 # Проверка объёма (куба):
 print(cube1.get_volume())               # 216
