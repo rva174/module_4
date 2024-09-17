@@ -49,6 +49,7 @@ class Shop:
                 file.write(f"{product}\n")
                 file.close()
 
+
 s1 = Shop()
 p1 = Product('Potato', 50.5, 'Vegetables')
 p2 = Product('Spaghetti', 3.4, 'Groceries')
