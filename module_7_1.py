@@ -1,5 +1,4 @@
 #i#from pprint import pprint
-
 class Product:
     def __init__(self, name:str, weight:float, category:str):
         product = []
@@ -8,14 +7,11 @@ class Product:
         self.category = category
 
     def __str__(self):
-        return f'{self.name}, {self.weight}, {self.category}\n'
+        return f'{self.name}, {self.weight}, {self.category}'
 
 class Shop:
-    __file_name = 'products.txt'
-
     def __init__(self):
-        open(self.__file_name, 'a').close()
-        open(self.__file_name, 'a').close()
+        self.__file_name = 'products.txt'
     def get_products(self):
         file = open(self.__file_name, 'r')
         products = file.read()
@@ -23,31 +19,17 @@ class Shop:
         return products
 
     def add(self, *products):
-        list_products = {}
         file_content = self.get_products()
-        lines = []
-        index = 0
-
-        while index < len(file_content):
-            line_end = file_content.find('\n', index)
-            if line_end == -1:
-                lines.append(file_content[index:])
-                break
-            lines.append(file_content[index:line_end])
-            index = line_end + 1
-
-        for line in lines:
-            if line:
-                list_products[line[:line.find(',')]] = True
-
+        current_products = self.get_products()
+        file = open(self.__file_name, 'a')
         for product in products:
-            product_name = product.name
-            if product_name in list_products:
-                print(f'Продукт {product} уже есть в магазине')
+            if str(product) not in current_products:
+                file.write(str(product)+'\n')
+                current_products += str(product) + '\n'
             else:
-                file = open(self.__file_name, 'a')
-                file.write(f"{product}\n")
-                file.close()
+                print(f'Продукт {product} уже есть в магазине')
+        file.close()
+
 
 
 s1 = Shop()
